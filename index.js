@@ -1,5 +1,3 @@
-global.name = 'aa';
-
-console.info(global.name);
+require('./src/app.js');
 
 

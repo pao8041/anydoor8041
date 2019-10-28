@@ -1,12 +1,9 @@
 const http = require('http');
 const chalk = require('chalk');
-const conf = require('./config/defaultConfig.js');
+const conf = require('./config/index.js');
+const router = require('./router/index.js');
 
-const server = http.createServer((req, res) => {
-   res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/html');
-  res.end('<b>Hello Http!</b> --')
-});
+const server = http.createServer(router);
 
 server.listen(conf.port, conf.hostname, () => {
   const addr = `http://${conf.hostname}:${conf.port}`;
